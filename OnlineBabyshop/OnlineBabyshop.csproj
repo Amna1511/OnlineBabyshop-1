@@ -16,6 +16,7 @@
     <Compile Remove="Data\Migrations\20200129102512_tenth-migration.Designer.cs" />
     <Compile Remove="Data\Migrations\20200129104153_eleven-migration.cs" />
     <Compile Remove="Data\Migrations\20200129104153_eleven-migration.Designer.cs" />
+<<<<<<< HEAD
     <Compile Remove="Data\Migrations\20200203092642_dddd-migration.cs" />
     <Compile Remove="Data\Migrations\20200203092642_dddd-migration.Designer.cs" />
     <Compile Remove="Data\Migrations\20200203093059_zzz-migration.cs" />
@@ -24,6 +25,8 @@
     <Compile Remove="Data\Migrations\20200203094829_ddd-migraion.Designer.cs" />
     <Compile Remove="Migrations\20200203101507_a-migration.cs" />
     <Compile Remove="Migrations\20200203101507_a-migration.Designer.cs" />
+=======
+>>>>>>> f59acac8d55b8772f369c689cbacb105318e8a3a
   </ItemGroup>
 
 

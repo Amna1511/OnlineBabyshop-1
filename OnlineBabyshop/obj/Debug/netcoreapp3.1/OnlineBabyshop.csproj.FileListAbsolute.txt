@@ -202,6 +202,7 @@ C:\Users\Lexicon\source\repos\OnlineBabyshop\OnlineBabyshop\obj\Debug\netcoreapp
 C:\Users\Lexicon\source\repos\OnlineBabyshop\OnlineBabyshop\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCarts\Index.cshtml.g.cs
 C:\Users\Lexicon\source\repos\OnlineBabyshop\OnlineBabyshop\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Checkout.cshtml.g.cs
 C:\Users\Lexicon\source\repos\OnlineBabyshop\OnlineBabyshop\obj\Debug\netcoreapp3.1\Razor\Views\Orders\CheckoutComplete.cshtml.g.cs
+<<<<<<< HEAD
 C:\Users\Lexicon\source\repos\OnlineBabyshop\OnlineBabyshop\obj\Debug\netcoreapp3.1\OnlineBabyshop.csprojAssemblyReference.cache
 C:\Users\Lexicon\Desktop\backup\OnlineBabyshop\OnlineBabyshop\obj\Debug\netcoreapp3.1\staticwebassets\OnlineBabyshop.StaticWebAssets.Manifest.cache
 C:\Users\Lexicon\Desktop\backup\OnlineBabyshop\OnlineBabyshop\obj\Debug\netcoreapp3.1\staticwebassets\OnlineBabyshop.StaticWebAssets.xml
@@ -405,3 +406,5 @@ C:\Users\Lexicon\Desktop\backup\OnlineBabyshop\OnlineBabyshop\obj\Debug\netcorea
 C:\Users\Lexicon\Desktop\backup\OnlineBabyshop\OnlineBabyshop\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Checkout.cshtml.g.cs
 C:\Users\Lexicon\Desktop\backup\OnlineBabyshop\OnlineBabyshop\obj\Debug\netcoreapp3.1\Razor\Views\Orders\CheckoutComplete.cshtml.g.cs
 C:\Users\Lexicon\Desktop\backup\OnlineBabyshop\OnlineBabyshop\obj\Debug\netcoreapp3.1\Razor\Views\Orders\CheckoutOne.cshtml.g.cs
+=======
+>>>>>>> f59acac8d55b8772f369c689cbacb105318e8a3a

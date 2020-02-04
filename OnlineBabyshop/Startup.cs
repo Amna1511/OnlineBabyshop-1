@@ -14,25 +14,41 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Http;
 using OnlineBabyshop.Models;
 using OnlineBabyshop.Data.Repositories;
 using OnlineBabyshop.Data.Interfaces;
+=======
+using OnlineBabyshop.Data.Interfaces;
+using OnlineBabyshop.Data.Repositories;
+using Microsoft.AspNetCore.Http;
+using OnlineBabyshop.Models;
+>>>>>>> f59acac8d55b8772f369c689cbacb105318e8a3a
 
 namespace OnlineBabyshop
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+        //public Startup(IConfiguration configuration)
+        //{
+        //    Configuration = configuration;
+        //}
 
-        public IConfiguration Configuration { get; }
+        //public IConfiguration Configuration { get; }
+        private IConfigurationRoot _configurationRoot;
+        public Startup(Microsoft.AspNetCore.Hosting.IHostingEnvironment hostingEnvironment)
+        {
+            _configurationRoot = new ConfigurationBuilder()
+                .SetBasePath(hostingEnvironment.ContentRootPath)
+                .AddJsonFile("appsettings.json")
+                .Build();
+        }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+<<<<<<< HEAD
             //services.AddDbContext<ApplicationDbContext>(options =>
             //    options.UseSqlServer(
             //        Configuration.GetConnectionString("DefaultConnection")));
@@ -46,13 +62,21 @@ namespace OnlineBabyshop
                   Configuration.GetConnectionString("DefaultConnection")));
 
 
+=======
+            //Server configuration
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(_configurationRoot.GetConnectionString("DefaultConnection")));
+            //Authentication, Identity config
+>>>>>>> f59acac8d55b8772f369c689cbacb105318e8a3a
             services.AddIdentity<IdentityUser, IdentityRole>()
-            .AddRoleManager<RoleManager<IdentityRole>>()
-            .AddEntityFrameworkStores<ApplicationDbContext>()
-            .AddDefaultUI()
-            .AddDefaultTokenProviders();
+                .AddEntityFrameworkStores<ApplicationDbContext>();
 
 
+            //services.AddIdentity<IdentityUser, IdentityRole>()
+            //.AddRoleManager<RoleManager<IdentityRole>>()
+            //.AddEntityFrameworkStores<ApplicationDbContext>()
+            //.AddDefaultUI()
+            //.AddDefaultTokenProviders();
 
             //services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddTransient<IProductsRepository, ProductsRepository>();
@@ -60,10 +84,16 @@ namespace OnlineBabyshop
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => ShoppingCart.GetCart(sp));
             services.AddTransient<IOrdersRepository, OrdersRepository>();
+<<<<<<< HEAD
             services.AddMemoryCache();
             services.AddSession();
 
+=======
+>>>>>>> f59acac8d55b8772f369c689cbacb105318e8a3a
 
+            services.AddMvc();
+            services.AddMemoryCache();
+            services.AddSession();
 
 
             //            services.AddMvc(options =>
@@ -96,6 +126,10 @@ namespace OnlineBabyshop
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSession();
+<<<<<<< HEAD
+=======
+           
+>>>>>>> f59acac8d55b8772f369c689cbacb105318e8a3a
 
             app.UseRouting();
 
@@ -135,7 +169,11 @@ namespace OnlineBabyshop
             //here we are assigning the Admin role to the User that we have registered above 
             //Now, we are assinging admin role to this user("Ali@gmail.com"). When will we run this project then it will
             //be assigned to that user.
+<<<<<<< HEAD
             IdentityUser user = await UserManager.FindByEmailAsync("admin@123.com");
+=======
+            IdentityUser user = await UserManager.FindByEmailAsync("arwa533@hotmail.com");
+>>>>>>> f59acac8d55b8772f369c689cbacb105318e8a3a
             var User = new IdentityUser();
             await UserManager.AddToRoleAsync(user, "Admin");
         }

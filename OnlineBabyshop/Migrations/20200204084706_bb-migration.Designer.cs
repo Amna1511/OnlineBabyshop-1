@@ -293,9 +293,12 @@ namespace OnlineBabyshop.Migrations
                         .HasColumnType("nvarchar(25)")
                         .HasMaxLength(25);
 
+<<<<<<< HEAD:OnlineBabyshop/Migrations/20200204084706_bb-migration.Designer.cs
                     b.Property<int>("ShoppingCartItemsId")
                         .HasColumnType("int");
 
+=======
+>>>>>>> f59acac8d55b8772f369c689cbacb105318e8a3a:OnlineBabyshop/Data/Migrations/ApplicationDbContextModelSnapshot.cs
                     b.Property<string>("State")
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
@@ -307,9 +310,41 @@ namespace OnlineBabyshop.Migrations
 
                     b.HasKey("OrderId");
 
+<<<<<<< HEAD:OnlineBabyshop/Migrations/20200204084706_bb-migration.Designer.cs
                     b.HasIndex("ShoppingCartItemsId");
 
                     b.ToTable("Order");
+=======
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("OnlineBabyshop.Models.OrderDetails", b =>
+                {
+                    b.Property<int>("OrderDetailsId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderDetailsId");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderDetails");
+>>>>>>> f59acac8d55b8772f369c689cbacb105318e8a3a:OnlineBabyshop/Data/Migrations/ApplicationDbContextModelSnapshot.cs
                 });
 
             modelBuilder.Entity("OnlineBabyshop.Models.Product", b =>
@@ -440,11 +475,25 @@ namespace OnlineBabyshop.Migrations
                         .IsRequired();
                 });
 
+<<<<<<< HEAD:OnlineBabyshop/Migrations/20200204084706_bb-migration.Designer.cs
             modelBuilder.Entity("OnlineBabyshop.Models.Order", b =>
                 {
                     b.HasOne("OnlineBabyshop.Models.ShoppingCartItems", "shoppingCartItems")
                         .WithMany()
                         .HasForeignKey("ShoppingCartItemsId")
+=======
+            modelBuilder.Entity("OnlineBabyshop.Models.OrderDetails", b =>
+                {
+                    b.HasOne("OnlineBabyshop.Models.Order", "Order")
+                        .WithMany("OrderLines")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OnlineBabyshop.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+>>>>>>> f59acac8d55b8772f369c689cbacb105318e8a3a:OnlineBabyshop/Data/Migrations/ApplicationDbContextModelSnapshot.cs
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

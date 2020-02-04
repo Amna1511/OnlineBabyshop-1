@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 ﻿using OnlineBabyshop.Data.Interfaces;
 using OnlineBabyshop.Models;
+=======
+﻿using OnlineBabyshop.Models;
+>>>>>>> f59acac8d55b8772f369c689cbacb105318e8a3a
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace OnlineBabyshop.Data.Repositories
 {
+<<<<<<< HEAD
     public class OrdersRepository : IOrdersRepository
     {
         private readonly ApplicationDbContext _appDbContext;
@@ -16,10 +21,23 @@ namespace OnlineBabyshop.Data.Repositories
         public OrdersRepository(ApplicationDbContext appDbContext, ShoppingCart shoppingCart)
         {
             _appDbContext = appDbContext;
+=======
+    public class OrdersRepository: IOrdersRepository
+    {
+
+        private readonly ApplicationDbContext _context;
+        private readonly ShoppingCart _shoppingCart;
+
+
+        public OrdersRepository(ApplicationDbContext context, ShoppingCart shoppingCart)
+        {
+            _context = context;
+>>>>>>> f59acac8d55b8772f369c689cbacb105318e8a3a
             _shoppingCart = shoppingCart;
         }
 
 
+<<<<<<< HEAD
         public void CreateOrder(Order order)
         {
             order.OrderPlaced = DateTime.Now;
@@ -29,6 +47,15 @@ namespace OnlineBabyshop.Data.Repositories
             var shoppingCartItems = _shoppingCart.ShoppingCartItems;
             
             _appDbContext.SaveChanges();
+=======
+        public int CreateOrder(Orders orders)
+        {
+            orders.OrderPlaced = DateTime.Now;
+
+            _context.Orders.Add(orders);
+
+            var shoppingCartItems = _shoppingCart.ShoppingCartItems;
+>>>>>>> f59acac8d55b8772f369c689cbacb105318e8a3a
 
             foreach (var shoppingCartItem in shoppingCartItems)
             {
@@ -36,6 +63,7 @@ namespace OnlineBabyshop.Data.Repositories
                 {
                     Amount = shoppingCartItem.Amount,
                     ProductId = shoppingCartItem.Product.ProductId,
+<<<<<<< HEAD
                     OrderId = order.OrderId,
                     Price = shoppingCartItem.Product.Price
                 };
@@ -79,6 +107,27 @@ namespace OnlineBabyshop.Data.Repositories
 
             _appDbContext.SaveChanges();
         }
+=======
+                    OrderId = orders.OrderId,
+                    Price = shoppingCartItem.Product.Price,
+                    ShoppingCartItemsId = shoppingCartItem.ShoppingCartItemsId
+                };
+
+                _context.OrderDetails.Add(orderDetails);
+                
+            }
+
+            _context.SaveChanges();
+          
+            return orders.OrderId;
+        }
+
+
+
+
+
+
+>>>>>>> f59acac8d55b8772f369c689cbacb105318e8a3a
 
 
 
