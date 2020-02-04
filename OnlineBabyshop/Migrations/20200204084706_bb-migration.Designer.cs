@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OnlineBabyshop.Data;
 
-namespace OnlineBabyshop.Data.Migrations
+namespace OnlineBabyshop.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200121104917_first")]
-    partial class first
+    [Migration("20200204084706_bb-migration")]
+    partial class bbmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -247,6 +247,71 @@ namespace OnlineBabyshop.Data.Migrations
                     b.ToTable("Gender");
                 });
 
+            modelBuilder.Entity("OnlineBabyshop.Models.Order", b =>
+                {
+                    b.Property<int>("OrderId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AddressLine1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("AddressLine2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("OrderPlaced")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("OrderTotal")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(25)")
+                        .HasMaxLength(25);
+
+                    b.Property<int>("ShoppingCartItemsId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("State")
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
+
+                    b.Property<string>("ZipCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
+
+                    b.HasKey("OrderId");
+
+                    b.HasIndex("ShoppingCartItemsId");
+
+                    b.ToTable("Order");
+                });
+
             modelBuilder.Entity("OnlineBabyshop.Models.Product", b =>
                 {
                     b.Property<int>("ProductId")
@@ -254,11 +319,14 @@ namespace OnlineBabyshop.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CategoryId")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<int>("GenderId")
                         .HasColumnType("int");
+
+                    b.Property<string>("ImgUrl")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Price")
                         .HasColumnType("int");
@@ -281,6 +349,29 @@ namespace OnlineBabyshop.Data.Migrations
                     b.HasIndex("SizeId");
 
                     b.ToTable("Product");
+                });
+
+            modelBuilder.Entity("OnlineBabyshop.Models.ShoppingCartItems", b =>
+                {
+                    b.Property<int>("ShoppingCartItemsId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ShoppingCartId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ShoppingCartItemsId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ShoppingCartItems");
                 });
 
             modelBuilder.Entity("OnlineBabyshop.Models.Size", b =>
@@ -349,11 +440,22 @@ namespace OnlineBabyshop.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("OnlineBabyshop.Models.Order", b =>
+                {
+                    b.HasOne("OnlineBabyshop.Models.ShoppingCartItems", "shoppingCartItems")
+                        .WithMany()
+                        .HasForeignKey("ShoppingCartItemsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("OnlineBabyshop.Models.Product", b =>
                 {
-                    b.HasOne("OnlineBabyshop.Models.Category", null)
+                    b.HasOne("OnlineBabyshop.Models.Category", "category")
                         .WithMany("Products")
-                        .HasForeignKey("CategoryId");
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("OnlineBabyshop.Models.Gender", "gender")
                         .WithMany()
@@ -366,6 +468,13 @@ namespace OnlineBabyshop.Data.Migrations
                         .HasForeignKey("SizeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("OnlineBabyshop.Models.ShoppingCartItems", b =>
+                {
+                    b.HasOne("OnlineBabyshop.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId");
                 });
 #pragma warning restore 612, 618
         }
