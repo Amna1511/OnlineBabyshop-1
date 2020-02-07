@@ -13,21 +13,45 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
+<<<<<<< HEAD
 #line 1 "C:\Users\Lexicon\Desktop\backup\OnlineBabyshop\OnlineBabyshop\Areas\Identity\Pages\_ViewImports.cshtml"
+=======
+<<<<<<< HEAD
+#line 1 "C:\Users\Lexicon\Desktop\backup\OnlineBabyshop\OnlineBabyshop\Areas\Identity\Pages\_ViewImports.cshtml"
+=======
+#line 1 "C:\Users\Lexicon\source\repos\OnlineBabyshop\OnlineBabyshop\Areas\Identity\Pages\_ViewImports.cshtml"
+>>>>>>> f59acac8d55b8772f369c689cbacb105318e8a3a
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD
 #line 2 "C:\Users\Lexicon\Desktop\backup\OnlineBabyshop\OnlineBabyshop\Areas\Identity\Pages\_ViewImports.cshtml"
+=======
+<<<<<<< HEAD
+#line 2 "C:\Users\Lexicon\Desktop\backup\OnlineBabyshop\OnlineBabyshop\Areas\Identity\Pages\_ViewImports.cshtml"
+=======
+#line 2 "C:\Users\Lexicon\source\repos\OnlineBabyshop\OnlineBabyshop\Areas\Identity\Pages\_ViewImports.cshtml"
+>>>>>>> f59acac8d55b8772f369c689cbacb105318e8a3a
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
 using OnlineBabyshop.Areas.Identity;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD
 #line 3 "C:\Users\Lexicon\Desktop\backup\OnlineBabyshop\OnlineBabyshop\Areas\Identity\Pages\_ViewImports.cshtml"
+=======
+<<<<<<< HEAD
+#line 3 "C:\Users\Lexicon\Desktop\backup\OnlineBabyshop\OnlineBabyshop\Areas\Identity\Pages\_ViewImports.cshtml"
+=======
+#line 3 "C:\Users\Lexicon\source\repos\OnlineBabyshop\OnlineBabyshop\Areas\Identity\Pages\_ViewImports.cshtml"
+>>>>>>> f59acac8d55b8772f369c689cbacb105318e8a3a
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
 using OnlineBabyshop.Areas.Identity.Pages;
 
 #line default

@@ -318,9 +318,12 @@ namespace OnlineBabyshop.Migrations
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
+<<<<<<< HEAD
                     b.Property<decimal>("OrderTotal")
                         .HasColumnType("decimal(18,2)");
 
+=======
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
@@ -391,9 +394,12 @@ namespace OnlineBabyshop.Migrations
                     b.Property<int?>("OrderDetailsId")
                         .HasColumnType("int");
 
+<<<<<<< HEAD
                     b.Property<decimal>("OrderTotal")
                         .HasColumnType("decimal(18,2)");
 
+=======
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
                     b.Property<int?>("ProductId")
                         .HasColumnType("int");
 

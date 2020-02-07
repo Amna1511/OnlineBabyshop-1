@@ -57,7 +57,11 @@ namespace OnlineBabyshop.Models
             ErrorMessage = "The email address is not entered in a correct format")]
         public string Email { get; set; }
 
+<<<<<<< HEAD
         
+=======
+        [ScaffoldColumn(false)]
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
         public decimal OrderTotal { get; set; }
 
         [ScaffoldColumn(false)]

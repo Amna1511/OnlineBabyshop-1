@@ -10,8 +10,18 @@ using OnlineBabyshop.Data;
 namespace OnlineBabyshop.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
+<<<<<<< HEAD
+<<<<<<< HEAD:OnlineBabyshop/Migrations/20200204084804_cc-migration.Designer.cs
     [Migration("20200204084804_cc-migration")]
     partial class ccmigration
+=======
+    [Migration("20200127093053_third-migration")]
+    partial class thirdmigration
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62:OnlineBabyshop/Data/Migrations/20200127093053_third-migration.Designer.cs
+=======
+    [Migration("20200204084804_cc-migration")]
+    partial class ccmigration
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -247,6 +257,10 @@ namespace OnlineBabyshop.Migrations
                     b.ToTable("Gender");
                 });
 
+<<<<<<< HEAD
+<<<<<<< HEAD:OnlineBabyshop/Migrations/20200204084804_cc-migration.Designer.cs
+=======
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
             modelBuilder.Entity("OnlineBabyshop.Models.Order", b =>
                 {
                     b.Property<int>("OrderId")
@@ -312,6 +326,11 @@ namespace OnlineBabyshop.Migrations
                     b.ToTable("Order");
                 });
 
+<<<<<<< HEAD
+=======
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62:OnlineBabyshop/Data/Migrations/20200127093053_third-migration.Designer.cs
+=======
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
             modelBuilder.Entity("OnlineBabyshop.Models.Product", b =>
                 {
                     b.Property<int>("ProductId")
@@ -351,6 +370,10 @@ namespace OnlineBabyshop.Migrations
                     b.ToTable("Product");
                 });
 
+<<<<<<< HEAD
+<<<<<<< HEAD:OnlineBabyshop/Migrations/20200204084804_cc-migration.Designer.cs
+=======
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
             modelBuilder.Entity("OnlineBabyshop.Models.ShoppingCartItems", b =>
                 {
                     b.Property<int>("ShoppingCartItemsId")
@@ -374,6 +397,11 @@ namespace OnlineBabyshop.Migrations
                     b.ToTable("ShoppingCartItems");
                 });
 
+<<<<<<< HEAD
+=======
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62:OnlineBabyshop/Data/Migrations/20200127093053_third-migration.Designer.cs
+=======
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
             modelBuilder.Entity("OnlineBabyshop.Models.Size", b =>
                 {
                     b.Property<int>("SizeId")
@@ -440,6 +468,10 @@ namespace OnlineBabyshop.Migrations
                         .IsRequired();
                 });
 
+<<<<<<< HEAD
+<<<<<<< HEAD:OnlineBabyshop/Migrations/20200204084804_cc-migration.Designer.cs
+=======
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
             modelBuilder.Entity("OnlineBabyshop.Models.Order", b =>
                 {
                     b.HasOne("OnlineBabyshop.Models.ShoppingCartItems", "shoppingCartItems")
@@ -449,6 +481,11 @@ namespace OnlineBabyshop.Migrations
                         .IsRequired();
                 });
 
+<<<<<<< HEAD
+=======
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62:OnlineBabyshop/Data/Migrations/20200127093053_third-migration.Designer.cs
+=======
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
             modelBuilder.Entity("OnlineBabyshop.Models.Product", b =>
                 {
                     b.HasOne("OnlineBabyshop.Models.Category", "category")
@@ -469,6 +506,10 @@ namespace OnlineBabyshop.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
+<<<<<<< HEAD
+<<<<<<< HEAD:OnlineBabyshop/Migrations/20200204084804_cc-migration.Designer.cs
+=======
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
 
             modelBuilder.Entity("OnlineBabyshop.Models.ShoppingCartItems", b =>
                 {
@@ -476,6 +517,11 @@ namespace OnlineBabyshop.Migrations
                         .WithMany()
                         .HasForeignKey("ProductId");
                 });
+<<<<<<< HEAD
+=======
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62:OnlineBabyshop/Data/Migrations/20200127093053_third-migration.Designer.cs
+=======
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
 #pragma warning restore 612, 618
         }
     }

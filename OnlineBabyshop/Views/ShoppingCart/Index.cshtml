@@ -6,11 +6,19 @@
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
+<<<<<<< HEAD
                 <th>Selected Qauntity</th>
                 <th>Drink</th>
                 <th class="text-right">Price</th>
                 <th class="text-right">Subtotal</th>
                 
+=======
+                <th>Selected amount</th>
+                <th>Drink</th>
+                <th class="text-right">Price</th>
+                <th class="text-right">Subtotal</th>
+                <th></th>
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
             </tr>
         </thead>
         <tbody>
@@ -23,11 +31,16 @@
                     <td class="text-right">
                         @((line.Amount * line.Product.Price).ToString("c"))
                     </td>
+<<<<<<< HEAD
                     <td class="text-center"><a class="glyphicon glyphicon-remove text-danger remove" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-productId="@line.Product.ProductId">Add</a></td>
              
                     <td class="text-center"><a class="glyphicon glyphicon-remove text-danger remove" asp-controller="ShoppingCart" asp-action="RemoveFromShoppingCart" asp-route-productId="@line.Product.ProductId">Remove</a></td>
                 </tr>
 
+=======
+                    <td class="text-center"><a class="glyphicon glyphicon-remove text-danger remove" asp-controller="ShoppingCart" asp-action="RemoveFromShoppingCart" asp-route-drinkId="@line.Product.ProductId"></a></td>
+                </tr>
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
             }
         </tbody>
         <tfoot>
@@ -43,14 +56,22 @@
     <div class="text-right">
         <div class="btn-group ">
             <a class="btn btn-success" asp-controller="Orders" asp-action="Checkout">Check out</a>
+<<<<<<< HEAD
          
+=======
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
             <a class="btn-group">
                 <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                     Add more drinks<span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
+<<<<<<< HEAD
                     <li><a asp-controller="Categories" asp-action="ListOfCategories" asp-route-category="CategorgId">Categories</a></li>
 
+=======
+                    <li><a asp-controller="Products" asp-action="List" asp-route-category="All products">all products</a></li>
+                
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
                 </ul>
             </a>
         </div>

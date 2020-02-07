@@ -10,8 +10,18 @@ using OnlineBabyshop.Data;
 namespace OnlineBabyshop.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
+<<<<<<< HEAD
+<<<<<<< HEAD:OnlineBabyshop/Migrations/20200204102137_ff-migration.Designer.cs
     [Migration("20200204102137_ff-migration")]
     partial class ffmigration
+=======
+    [Migration("20200129105444_a-migration")]
+    partial class amigration
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62:OnlineBabyshop/Data/Migrations/20200129105444_a-migration.Designer.cs
+=======
+    [Migration("20200204102137_ff-migration")]
+    partial class ffmigration
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

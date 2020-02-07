@@ -14,25 +14,47 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
 using Microsoft.AspNetCore.Http;
 using OnlineBabyshop.Models;
 using OnlineBabyshop.Data.Repositories;
 using OnlineBabyshop.Data.Interfaces;
+<<<<<<< HEAD
+=======
+=======
+using OnlineBabyshop.Data.Interfaces;
+using OnlineBabyshop.Data.Repositories;
+using Microsoft.AspNetCore.Http;
+using OnlineBabyshop.Models;
+>>>>>>> f59acac8d55b8772f369c689cbacb105318e8a3a
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
 
 namespace OnlineBabyshop
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+        //public Startup(IConfiguration configuration)
+        //{
+        //    Configuration = configuration;
+        //}
 
-        public IConfiguration Configuration { get; }
+        //public IConfiguration Configuration { get; }
+        private IConfigurationRoot _configurationRoot;
+        public Startup(Microsoft.AspNetCore.Hosting.IHostingEnvironment hostingEnvironment)
+        {
+            _configurationRoot = new ConfigurationBuilder()
+                .SetBasePath(hostingEnvironment.ContentRootPath)
+                .AddJsonFile("appsettings.json")
+                .Build();
+        }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+<<<<<<< HEAD
             //services.AddDbContext<ApplicationDbContext>(options =>
             //    options.UseSqlServer(
             //        Configuration.GetConnectionString("DefaultConnection")));
@@ -46,13 +68,24 @@ namespace OnlineBabyshop
                   Configuration.GetConnectionString("DefaultConnection")));
 
 
+<<<<<<< HEAD
+=======
+=======
+            //Server configuration
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(_configurationRoot.GetConnectionString("DefaultConnection")));
+            //Authentication, Identity config
+>>>>>>> f59acac8d55b8772f369c689cbacb105318e8a3a
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
             services.AddIdentity<IdentityUser, IdentityRole>()
-            .AddRoleManager<RoleManager<IdentityRole>>()
-            .AddEntityFrameworkStores<ApplicationDbContext>()
-            .AddDefaultUI()
-            .AddDefaultTokenProviders();
+                .AddEntityFrameworkStores<ApplicationDbContext>();
 
 
+            //services.AddIdentity<IdentityUser, IdentityRole>()
+            //.AddRoleManager<RoleManager<IdentityRole>>()
+            //.AddEntityFrameworkStores<ApplicationDbContext>()
+            //.AddDefaultUI()
+            //.AddDefaultTokenProviders();
 
             //services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddTransient<IProductsRepository, ProductsRepository>();
@@ -60,10 +93,22 @@ namespace OnlineBabyshop
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => ShoppingCart.GetCart(sp));
             services.AddTransient<IOrdersRepository, OrdersRepository>();
+<<<<<<< HEAD
             services.AddMemoryCache();
             services.AddSession();
 
+=======
+<<<<<<< HEAD
+            services.AddMemoryCache();
+            services.AddSession();
 
+=======
+>>>>>>> f59acac8d55b8772f369c689cbacb105318e8a3a
+
+            services.AddMvc();
+            services.AddMemoryCache();
+            services.AddSession();
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
 
 
             //            services.AddMvc(options =>
@@ -77,6 +122,20 @@ namespace OnlineBabyshop
             //            services.AddRazorPages();
             //        }
 
+<<<<<<< HEAD
+            //            services.AddMvc(options =>
+            //            {
+            //                var policy = new AuthorizationPolicyBuilder()
+            //.RequireAuthenticatedUser()
+            //.Build();
+            //                options.Filters.Add(new AuthorizeFilter(policy));
+            //            }).AddXmlSerializerFormatters();
+            //            services.AddControllersWithViews();
+            //            services.AddRazorPages();
+            //        }
+
+=======
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -96,6 +155,13 @@ namespace OnlineBabyshop
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSession();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+           
+>>>>>>> f59acac8d55b8772f369c689cbacb105318e8a3a
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
 
             app.UseRouting();
 
@@ -135,7 +201,15 @@ namespace OnlineBabyshop
             //here we are assigning the Admin role to the User that we have registered above 
             //Now, we are assinging admin role to this user("Ali@gmail.com"). When will we run this project then it will
             //be assigned to that user.
+<<<<<<< HEAD
             IdentityUser user = await UserManager.FindByEmailAsync("admin@123.com");
+=======
+<<<<<<< HEAD
+            IdentityUser user = await UserManager.FindByEmailAsync("admin@123.com");
+=======
+            IdentityUser user = await UserManager.FindByEmailAsync("arwa533@hotmail.com");
+>>>>>>> f59acac8d55b8772f369c689cbacb105318e8a3a
+>>>>>>> 89dfc6c724e9a8493a70b7d55b5cf46b63d3eb62
             var User = new IdentityUser();
             await UserManager.AddToRoleAsync(user, "Admin");
         }
