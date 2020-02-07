@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lexicon\\source\\repos\\OnlineBabyshop\\OnlineBabyshop\\OnlineBabyshop.csproj": {}
+    "C:\\Users\\Lexicon\\Desktop\\backup\\OnlineBabyshop\\OnlineBabyshop\\OnlineBabyshop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lexicon\\source\\repos\\OnlineBabyshop\\OnlineBabyshop\\OnlineBabyshop.csproj": {
+    "C:\\Users\\Lexicon\\Desktop\\backup\\OnlineBabyshop\\OnlineBabyshop\\OnlineBabyshop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lexicon\\source\\repos\\OnlineBabyshop\\OnlineBabyshop\\OnlineBabyshop.csproj",
+        "projectUniqueName": "C:\\Users\\Lexicon\\Desktop\\backup\\OnlineBabyshop\\OnlineBabyshop\\OnlineBabyshop.csproj",
         "projectName": "OnlineBabyshop",
-        "projectPath": "C:\\Users\\Lexicon\\source\\repos\\OnlineBabyshop\\OnlineBabyshop\\OnlineBabyshop.csproj",
+        "projectPath": "C:\\Users\\Lexicon\\Desktop\\backup\\OnlineBabyshop\\OnlineBabyshop\\OnlineBabyshop.csproj",
         "packagesPath": "C:\\Users\\Lexicon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lexicon\\source\\repos\\OnlineBabyshop\\OnlineBabyshop\\obj\\",
+        "outputPath": "C:\\Users\\Lexicon\\Desktop\\backup\\OnlineBabyshop\\OnlineBabyshop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -71,7 +71,7 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[3.1.0, )"
+              "version": "[3.1.1, )"
             }
           },
           "imports": [
